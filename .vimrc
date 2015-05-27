@@ -5,6 +5,11 @@ filetype on
 filetype plugin indent on
 
 set number
+set cursorline
+set showmatch
+set incsearch
+set hlsearch
+set lazyredraw
 
 set laststatus=2
 set encoding=utf-8
@@ -13,6 +18,7 @@ set t_Co=256
 
 set rtp+=/home/nathan/.vim/bundle/powerline/powerline/bindings/vim
 
+set foldenable
 set foldmethod=syntax
 set foldlevel=99
 set tabstop=4
@@ -34,10 +40,22 @@ if getcwd() == '/'
 endif
 autocmd FileType javascript vnoremap <C-f> "hy:vim /<C-r>=GetVisual()<CR>/gj ./**/*.js<CR>:copen<CR>
 
+let mapleader=","
+inoremap jk <esc>
+nnoremap <leader>s :mksession<CR>
+
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+nnoremap B ^
+nnoremap E $
+
+nnoremap ^ <nop>
+nnoremap $ <nop>
+
+nnoremap gV '[v']'
 
 map <leader>n :NERDTreeToggle<CR>
 map <leader>t <Plug>TaskList
