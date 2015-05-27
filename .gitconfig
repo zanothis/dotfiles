@@ -1,0 +1,12 @@
+[user]
+    name = Nathan Benjamin
+    email = nb-accounts@thebenjamins.me
+[core]
+    editor = vim
+[alias]
+    co = checkout
+    st = status
+    br = branch
+    ec = config --global -e
+    cm = commit
+    cob = checkout -b
