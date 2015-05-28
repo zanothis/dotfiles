@@ -98,7 +98,7 @@
 
 " Shortcuts {{{
     inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-    inoremap <S-Tab> <c-n> "
+    " inoremap <S-Tab> <c-n> "
     inoremap jk <esc>
 
     " Buffer movement
@@ -144,13 +144,14 @@
 " AutoGroups {{{
     augroup configgroup
         autocmd!
+        autocmd InsertEnter * :set number
+        autocmd InsertLeave * :set relativenumber
         autocmd BufWritePre *.js,*.jsx
 \            :call <SID>StripTrailingWhitespaces()
+        autocmd FileType python set nowrap
+        autocmd FileType javascript noremap <buffer> <c-k><c-d> :call JsBeautify()<cr>
     augroup END
 " }}}
-
-autocmd FileType python set nowrap
-autocmd FileType javascript noremap <buffer> <c-k><c-d> :call JsBeautify()<cr>
 
 let g:jsx_ext_required = 0
 
