@@ -10,3 +10,5 @@
     ec = config --global -e
     cm = commit
     cob = checkout -b
+[push]
+	default = simple
