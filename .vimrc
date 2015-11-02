@@ -61,7 +61,8 @@
         if !col || getline('.')[col - 1] !~ '\k'
             return "\<tab>"
         else
-            return "\<c-p>"
+            call UltiSnips#ExpandSnippetOrJump()
+            "return "\<c-p>"
         endif
     endfunction
 
@@ -91,6 +92,7 @@
     let mapleader=","
     nnoremap <leader>s :SaveSession
     nnoremap <leader>a :Ag
+    nnoremap <leader>f :CtrlPMixed
     map <leader>n :NERDTreeToggle<CR>
     map <leader>t <Plug>TaskList
     map <leader>x :TlistToggle<CR>
@@ -122,11 +124,12 @@
 
 " Powerline {{{
     set laststatus=2
-    set rtp+=/home/nathan/.vim/bundle/powerline/powerline/bindings/vim
+    set rtp+=/home/zanothis/.vim/bundle/powerline/powerline/bindings/vim
+    let g:Powerline_symbols = "fancy"
 " }}}
 
 " CtrlP {{{
-    set rtp^=/home/nathan/.vim/bundle/ctrlp.vim
+    set rtp^=/home/zanothis/.vim/bundle/ctrlp.vim
     let g:ctrlp_match_window = 'bottom,order:ttb'
     let g:ctrlp_switch_buffer = 0
     let g:ctrlp_working_path_mode = 0
@@ -138,7 +141,7 @@
 " }}}
 
 " Vim-Session {{{
-
+    let g:session_autosave = 'no'
 " }}}
 
 " AutoGroups {{{
