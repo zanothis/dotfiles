@@ -124,12 +124,12 @@
 
 " Powerline {{{
     set laststatus=2
-    set rtp+=/home/zanothis/.vim/bundle/powerline/powerline/bindings/vim
+    set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
     let g:Powerline_symbols = "fancy"
 " }}}
 
 " CtrlP {{{
-    set rtp^=/home/zanothis/.vim/bundle/ctrlp.vim
+    set rtp^=$HOME/.vim/bundle/ctrlp.vim
     let g:ctrlp_match_window = 'bottom,order:ttb'
     let g:ctrlp_switch_buffer = 0
     let g:ctrlp_working_path_mode = 0
